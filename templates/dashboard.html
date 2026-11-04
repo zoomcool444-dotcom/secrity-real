@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SecureMail</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>SecureMail</span>
+            </div>
+            <div class="nav-menu">
+                <span style="color: #64748b; margin-right: 1rem;">Welcome, {{ user.full_name }}</span>
+                <a href="/logout" class="nav-link nav-button">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1><i class="fas fa-inbox"></i> Secure Inbox</h1>
+            <p>Manage your secure communications</p>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Account Information</h2>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="card-body">
+                    <div class="info-row">
+                        <strong>Full Name:</strong> {{ user.full_name }}
+                    </div>
+                    <div class="info-row">
+                        <strong>Username:</strong> {{ user.username }}
+                    </div>
+                    <div class="info-row">
+                        <strong>Email:</strong> {{ user.email }}
+                    </div>
+                    <div class="info-row">
+                        <strong>Account Created:</strong> {{ user.created_at }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Security Status</h2>
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="card-body">
+                    <div class="security-item">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                        <span>Password Protected</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                        <span>Secure Session Active</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                        <span>Encrypted Authentication</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Quick Actions</h2>
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="card-body">
+                    <button class="action-btn" disabled>
+                        <i class="fas fa-envelope"></i> Compose Email (Coming Soon)
+                    </button>
+                    <button class="action-btn" disabled>
+                        <i class="fas fa-address-book"></i> Contacts (Coming Soon)
+                    </button>
+                    <button class="action-btn" disabled>
+                        <i class="fas fa-cog"></i> Settings (Coming Soon)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
